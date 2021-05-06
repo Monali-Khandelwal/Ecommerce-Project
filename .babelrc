@@ -1,0 +1,7 @@
+{
+    "presets" :[
+        [
+            "@babel/preset-env" // with this setting we can run project which is ES6
+        ]
+    ]
+}
