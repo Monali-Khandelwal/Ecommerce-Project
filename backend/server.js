@@ -1,4 +1,4 @@
-import express from 'express'; // to create webservice
+import express from 'express'; // to create webservice using express module
 import data from './data';
 
 //define app by running express function
