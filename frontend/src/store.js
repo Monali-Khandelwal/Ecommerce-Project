@@ -2,7 +2,7 @@ import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import { productListReducer } from './reducers/productReducers';
 import thunk from 'redux-thunk';
 
-const intitialState = {};
+const initialState = {};
 // reducer is a function which gets state and action and retruns a new state based on the action
 
 const reducer = combineReducers({
