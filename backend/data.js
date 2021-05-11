@@ -8,7 +8,8 @@ export default {
             price:2000,
             brand:' Arrow ',
             rating: 4.5,
-            numReviews: 10
+            numReviews: 10,
+            countInStock: 7,
         },
         {
             _id:'2',
@@ -18,7 +19,8 @@ export default {
             price:2100,
             brand:' Arrow ',
             rating: 4.2,
-            numReviews: 15
+            numReviews: 15,
+            countInStock: 9,
         },
         {
             _id:'3',
@@ -28,7 +30,8 @@ export default {
             price:1500,
             brand:' Arrow ',
             rating: 4.1,
-            numReviews: 5
+            numReviews: 5,
+            countInStock: 10,
         },
         {
             _id:'4',
@@ -38,7 +41,8 @@ export default {
             price:2000,
             brand:' Arrow ',
             rating: 4.5,
-            numReviews: 10
+            numReviews: 10,
+            countInStock: 7,
         },
 
 ]
