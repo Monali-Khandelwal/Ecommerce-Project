@@ -31,7 +31,7 @@ export default {
             numReviews: 5
         },
         {
-            _id:'1',
+            _id:'4',
             name:'Slim Shirt',
             category: 'Shirts',
             image:'/images/Arrow.jpeg',
