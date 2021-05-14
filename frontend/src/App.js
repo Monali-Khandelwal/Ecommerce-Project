@@ -4,6 +4,7 @@ import './App.css';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
 
@@ -25,8 +26,8 @@ function App() {
                     <Link to="/">Raj Collection</Link>
                 </div>
                 <div className="header-links">
-                    <a href = "cart.html">Cart</a>
-                    <a href="signin.html">Sign In</a>
+                    <a href = "cart.html"> Cart </a>
+                    <link to="/signin"></link>
                 </div>
             </header>
             <aside className="sidebar"> 
@@ -39,11 +40,15 @@ function App() {
                     <li>
                         <a href="index.html">T-Shirts</a>
                     </li>
+                    <li>
+                        <a href="index.html">Pants</a>
+                    </li>
                 </ul>
 
             </aside>
             <main className="main">
                 <div className="content">
+                  <Route path="/signin" component={SigninScreen} />
                   <Route path="/product/:id" component = {ProductScreen} />
                   <Route path="/cart/:id?" component = {CartScreen} />
                   <Route path="/" exact={true} component={HomeScreen} />

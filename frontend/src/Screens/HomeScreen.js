@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {listProducts} from '../actions/productActions';
+import data from '../data';
 
 //axios libray to fetch data from web api
 
