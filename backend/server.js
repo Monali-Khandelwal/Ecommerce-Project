@@ -3,6 +3,7 @@ import data from './data';
 import dotenv from 'dotenv';
 import config from './config';
 import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
 
 dotenv.config();
@@ -16,7 +17,7 @@ mongoose.connect(mongodbUrl, {
    }).catch(error => console.log(error.reason));
 //define app by running express function
 const app= express();
-
+app.use(bodyParser.json());
 //create endpoint with its path as first paramater and second parmater as handler function which responds to this request
 app.use("/api/users", userRoute);
 app.get("/api/products/:id", (req, res) => {
