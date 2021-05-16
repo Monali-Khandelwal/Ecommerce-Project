@@ -5,6 +5,7 @@ import config from './config';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
+import productRoute from './routes/userRoute';
 
 dotenv.config();
 
@@ -12,26 +13,27 @@ const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology:true,
-    useCreateIndex: true
-
-   }).catch(error => console.log(error.reason));
+    useCreateIndex: true,
+   })
+            .catch(error => console.log(error.reason));
 //define app by running express function
 const app= express();
 app.use(bodyParser.json());
 //create endpoint with its path as first paramater and second parmater as handler function which responds to this request
 app.use("/api/users", userRoute);
-app.get("/api/products/:id", (req, res) => {
-    const productId = req.params.id;
-    const product = data.products.find(x=>x._id === productId);
-    if (product)
-        res.send();
-    else
-        res.status(404).send({msg: "Product Not Found."})
-});
+app.use("/api/products", productRoute);
+// app.get("/api/products/:id", (req, res) => {
+//     const productId = req.params.id;
+//     const product = data.products.find(x=>x._id === productId);
+//     if (product)
+//         res.send();
+//     else
+//         res.status(404).send({msg: "Product Not Found."})
+// });
 
-app.get("/api/products", (req, res) => {
-    res.send(data.products);
-});
+// app.get("/api/products", (req, res) => {
+//     res.send(data.products);
+// });
 
 // app.Listen command to run the server -  means express js will start running
 app.listen(5002, () => { console.log("Server started at http://localhost:5002")});

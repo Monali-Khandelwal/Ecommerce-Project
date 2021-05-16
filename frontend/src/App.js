@@ -7,6 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import SigninScreen from './screens/SigninScreen';
+import ProductsScreen from './screens/ProductsScreen';
 
 function App() {
 
@@ -31,31 +32,33 @@ function App() {
                     <Link to="/">Raj Collection</Link>
                 </div>
                 <div className="header-links">
-                    <a href = "cart.html"> Cart </a>
+                    <a href = "cart"> Cart </a>
                     {
-                        userInfo ? <Link to="/profile">{userInfo.name}</Link>:
-                        <Link to="/signin">Sign In</Link>
+                        userInfo ? ( 
+                        <Link to="/profile">{userInfo.name}</Link>):(
+                        <Link to="/signin">Sign In</Link>)
                     }
                 </div>
             </header>
             <aside className="sidebar"> 
                 <h3>Shopping Categories</h3>
                 <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-                <ul>
+                <ul className="categories">
                     <li>
-                        <a href="index.html">Shorts</a>
+                        <Link to="/category/Pants">Pants</Link>
                     </li>
                     <li>
                         <a href="index.html">T-Shirts</a>
                     </li>
                     <li>
-                        <a href="index.html">Pants</a>
+                        <Link to="/category/Shirts">Shirts</Link>
                     </li>
                 </ul>
 
             </aside>
             <main className="main">
                 <div className="content">
+                  <Route path="/products" component={ProductsScreen} />
                   <Route path="/signin" component={SigninScreen} />
                   <Route path="/register" component={RegisterScreen} />
                   <Route path="/product/:id" component = {ProductScreen} />
