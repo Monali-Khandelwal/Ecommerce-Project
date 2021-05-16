@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-//define user schema-- which will deice how user will be saved in Mongo DB
+//define user schema-- which will decide how user will be saved in Mongo DB
 const userSchema = new mongoose.Schema({
   name:{type: String, required:true },
   email:{type: String, required:true, unique:true, dropDups: true },
